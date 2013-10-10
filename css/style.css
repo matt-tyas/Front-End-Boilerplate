@@ -3941,6 +3941,24 @@ a {
     .main-navigation ul ul a:hover {
       background: #4b545f; }
 
+/* SVG logo */
+.logo {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  z-index: 100;
+  display: block;
+  margin-left: -175px;
+  border: 0px none white;
+  display: block;
+  font: normal normal normal 13px/16px Lato, sans-serif;
+  height: 45px;
+  line-height: 16px;
+  outline: white none 0px;
+  vertical-align: middle;
+  width: 350px;
+  z-index: 0; }
+
 /* Boarder nav */
 .bt-menu {
   position: fixed;
@@ -3950,7 +3968,7 @@ a {
   height: 0;
   border-width: 0px;
   border-style: solid;
-  border-color: #333;
+  border-color: #003767;
   background-color: rgba(0, 0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
@@ -3958,8 +3976,8 @@ a {
 
 .bt-menu.bt-menu-open {
   height: 100%;
-  border-width: 90px 30px 30px 30px;
-  background-color: rgba(0, 0, 0, 0.3);
+  border-width: 90px 0px 0px 0px;
+  background-color: rgba(255, 255, 255, 0.8);
   -webkit-transition: border-width 0.3s, background-color 0.3s;
   transition: border-width 0.3s, background-color 0.3s; }
 
@@ -3972,46 +3990,46 @@ a {
 
 .bt-menu-trigger {
   position: fixed;
-  top: 22px;
-  left: 50%;
-  z-index: 100;
+  top: 15px;
+  right: 20px;
   display: block;
-  margin-left: -25px;
   width: 50px;
   height: 50px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 9999; }
 
 .bt-menu-trigger span {
   position: absolute;
   top: 50%;
-  left: 0;
+  right: 0;
   display: block;
   width: 100%;
-  height: 8%;
-  background-color: #000;
+  height: 4px;
+  margin-top: -2px;
+  background-color: #fff;
   font-size: 0px;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
 
 .bt-menu-open .bt-menu-trigger span {
-  background-color: #2980b9; }
+  background-color: transparent; }
 
 .bt-menu-trigger span:before,
 .bt-menu-trigger span:after {
   position: absolute;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #fff;
   content: '';
-  -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
-  transition: transform 0.3s, background-color 0.3s; }
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
 
 .bt-menu-trigger span:before {
   -webkit-transform: translateY(-250%);
@@ -4021,17 +4039,13 @@ a {
   -webkit-transform: translateY(250%);
   transform: translateY(250%); }
 
-.bt-menu-open .bt-menu-trigger span:before,
-.bt-menu-open .bt-menu-trigger span:after {
-  background-color: #2980b9; }
-
 .bt-menu-open .bt-menu-trigger span:before {
-  -webkit-transform: translateY(-350%);
-  transform: translateY(-350%); }
+  -webkit-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg); }
 
 .bt-menu-open .bt-menu-trigger span:after {
-  -webkit-transform: translateY(350%);
-  transform: translateY(350%); }
+  -webkit-transform: translateY(0) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg); }
 
 .bt-menu ul {
   position: fixed;
@@ -4041,7 +4055,6 @@ a {
   padding: 0;
   width: 100%;
   list-style: none;
-  text-align: center;
   white-space: nowrap;
   height: 0;
   -webkit-transition: height 0s 0.3s;
@@ -4059,7 +4072,6 @@ a {
 .bt-menu ul li {
   display: inline-block;
   margin: 0 2%;
-  width: 5%;
   height: 90px;
   line-height: 90px;
   opacity: 0;
@@ -4068,11 +4080,11 @@ a {
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0); }
 
-.bt-menu ul li:nth-child(3) {
-  margin-right: 70px; }
-
-.bt-menu ul li:nth-child(4) {
-  margin-left: 70px; }
+.home {
+  width: 225px; }
+  .home img {
+    position: relative;
+    top: 10px; }
 
 .bt-menu.bt-menu-open ul li {
   opacity: 1;
@@ -4102,8 +4114,11 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.15em;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s; }
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden; }
 
 .bt-menu ul li a:before {
   display: none;
@@ -4111,7 +4126,10 @@ a {
 
 .bt-menu ul li a:hover,
 .bt-menu ul li a:focus {
-  color: #2980b9; }
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.7; }
 
 @media screen and (max-width: 65.1em) {
   .bt-menu ul li a {
